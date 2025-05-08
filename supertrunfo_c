@@ -1,0 +1,50 @@
+int principal() {
+   char estado [10];
+    char codigo [5];
+    char cidade [20];
+    int populacao;
+    int Pontosturistico;
+    float area;
+   float pib;
+
+
+
+    printf("Digite seu estado:\n");
+    scanf("%s", &estado);
+
+    printf("Código:\n");
+    scanf("%s", &codigo);
+
+    printf("Nome da cidade:\n");
+    scanf("%s", &cidade);
+
+    printf("total de habitantes:\n");
+    scanf("%d", populacao);
+
+    printf("área:\n");
+    scanf("%f", &area);
+
+    printf("Pib:\n");
+    scanf("%f", &pib);
+
+    printf("Quantidade de pontos turísticos:\n");
+    scanf("%d", &Pontosturistico);
+    
+
+    printf("carta 1 \n");
+    printf("Estado:%s \n", estado);
+    printf("Código:%s \n", estado, codigo);
+    printf("Cidade:%s \n", cidade);
+    printf("Habitantes:%d \n", populacao);
+    printf("Área:%f \n", area);
+    printf("Pib:%f \n", pib);
+    printf("Pontos Turísticos:%f \n", Pontosturistico);
+
+     printf("carta 2 \n");
+    printf("Estado:%s \n", estado);
+    printf("Codigo:%s \n", estado, codigo);
+    printf("Cidade:%s \n", cidade);
+    printf("Habitantes:%d \n", populacao);
+    printf("Área:%f \n", area);
+    printf("Pib:%f \n", pib);
+    printf("Pontos Turísticos:%f \n", Pontosturistico);

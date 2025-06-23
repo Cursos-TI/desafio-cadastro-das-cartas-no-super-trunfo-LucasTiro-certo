@@ -1,0 +1,59 @@
+#include <stdio.h>
+
+int main() {
+       const int casas_a_mover_torre = 5;
+    const int casas_a_mover_bispo = 5;
+    const int casas_a_mover_rainha = 8;
+    
+    // Variáveis contadoras para os laços while e do-while.
+    int contador_passos_bispo = 0;
+    int contador_passos_rainha = 0;
+
+    printf("=============================================\n");
+    printf("    SIMULADOR DE MOVIMENTOS DE XADREZ\n");
+    printf("=============================================\n\n");
+
+
+    // --- 1. Movimento da Torre (usando 'for') ---
+    // A Torre move-se em linha reta. Vamos simular 5 casas para a direita.
+    // O laço 'for' é ideal aqui por ser perfeito para um número fixo de iterações.
+    printf("--- Movimento da Torre (5 casas para a direita) ---\n");
+    for (int i = 1; i <= casas_a_mover_torre; i++) {
+        // A cada iteração, imprimimos a direção do movimento.
+        printf("Passo %d da Torre: Direita\n", i);
+    }
+    printf("\n"); // Adiciona uma linha em branco para melhor legibilidade
+
+
+    // --- 2. Movimento do Bispo (usando 'while') ---
+    // O Bispo move-se na diagonal. Vamos simular 5 casas na diagonal superior direita.
+    // O laço 'while' verifica a condição antes de executar o bloco.
+    printf("--- Movimento do Bispo (5 casas na diagonal superior direita) ---\n");
+    while (contador_passos_bispo < casas_a_mover_bispo) {
+        // Imprime a combinação de direções para representar a diagonal.
+        printf("Passo %d do Bispo: Cima, Direita\n", contador_passos_bispo + 1);
+        
+        // Incrementa o contador para eventualmente terminar o laço.
+        contador_passos_bispo++;
+    }
+    printf("\n"); // Adiciona uma linha em branco
+
+
+    // --- 3. Movimento da Rainha (usando 'do-while') ---
+    // A Rainha pode mover-se em qualquer direção. Vamos simular 8 casas para a esquerda.
+    // O laço 'do-while' garante que o bloco de código execute pelo menos uma vez
+    // antes de verificar a condição.
+    printf("--- Movimento da Rainha (8 casas para a esquerda) ---\n");
+    do {
+        // Imprime a direção do movimento.
+        printf("Passo %d da Rainha: Esquerda\n", contador_passos_rainha + 1);
+        
+        // Incrementa o contador a cada passo.
+        contador_passos_rainha++;
+    } while (contador_passos_rainha < casas_a_mover_rainha);
+    
+
+    printf("\n--- Simulacao Concluida ---\n");
+
+    return 0; 
+}

@@ -1,1 +1,92 @@
 
+   desafio xadrez aventureiro
+#include <stdio.h>
+
+// --- Documentação Geral ---
+// Este programa simula o movimento de quatro peças de xadrez: Torre, Bispo, Rainha e Cavalo.
+// Cada peça utiliza uma estrutura de repetição específica para demonstrar seu uso.
+// Para o Cavalo, são utilizados laços aninhados (um 'for' e um 'while') para
+// simular o movimento em "L".
+// A saída do programa é uma descrição textual de cada passo do movimento.
+
+int main() {
+    // --- Definição das Variáveis e Constantes ---
+    // Constantes para controlar o número de casas a mover para cada peça.
+    const int CASAS_TORRE = 5;
+    const int CASAS_BISPO = 5;
+    const int CASAS_RAINHA = 8;
+    
+    // Constantes específicas para o movimento do Cavalo.
+    const int CASAS_CAVALO_VERTICAL = 2;   // Duas casas para baixo
+    const int CASAS_CAVALO_HORIZONTAL = 1; // Uma casa para a esquerda
+    
+    // Variáveis contadoras para os laços.
+    int contador_bispo = 0;
+    int contador_rainha = 0;
+
+    printf("=============================================\n");
+    printf("    SIMULADOR DE MOVIMENTOS DE XADREZ\n");
+    printf("=============================================\n\n");
+
+
+    // --- 1. Movimento da Torre (usando 'for') ---
+    printf("--- Movimento da Torre (5 casas para a direita) ---\n");
+    for (int i = 1; i <= CASAS_TORRE; i++) {
+        printf("Passo %d da Torre: Direita\n", i);
+    }
+    printf("\n");
+
+
+    // --- 2. Movimento do Bispo (usando 'while') ---
+    printf("--- Movimento do Bispo (5 casas na diagonal superior direita) ---\n");
+    while (contador_bispo < CASAS_BISPO) {
+        printf("Passo %d do Bispo: Cima, Direita\n", contador_bispo + 1);
+        contador_bispo++;
+    }
+    printf("\n");
+
+
+    // --- 3. Movimento da Rainha (usando 'do-while') ---
+    printf("--- Movimento da Rainha (8 casas para a esquerda) ---\n");
+    do {
+        printf("Passo %d da Rainha: Esquerda\n", contador_rainha + 1);
+        contador_rainha++;
+    } while (contador_rainha < CASAS_RAINHA);
+    printf("\n"); // Adiciona uma linha em branco para separar do Cavalo
+
+
+    // --- 4. Movimento do Cavalo (usando laços aninhados 'for' e 'while') ---
+    // O Cavalo move-se em "L": duas casas em uma direção e uma perpendicularmente.
+    // Vamos simular um movimento de 2 casas para baixo e 1 para a esquerda.
+    // Usaremos um laço externo que executa uma vez (para representar um único movimento em "L")
+    // e laços internos para os passos individuais.
+    printf("--- Movimento do Cavalo (2 para baixo, 1 para a esquerda) ---\n");
+    
+    int movimento_em_L_executado = 0;
+    // O laço 'while' externo representa a intenção de fazer um movimento em "L".
+    // Ele rodará apenas uma vez neste exemplo.
+    while (movimento_em_L_executado < 1) {
+
+        // Primeiro laço aninhado (for): executa o movimento vertical.
+        // Este laço 'for' itera para mover o cavalo duas casas para baixo.
+        for (int i = 0; i < CASAS_CAVALO_VERTICAL; i++) {
+            printf("Etapa do 'L': Baixo\n");
+        }
+        
+        // Segundo laço aninhado (while): executa o movimento perpendicular.
+        // Este laço executa uma vez para mover a peça para a esquerda, completando o "L".
+        int contador_horizontal = 0;
+        while(contador_horizontal < CASAS_CAVALO_HORIZONTAL) {
+            printf("Etapa do 'L': Esquerda\n");
+            contador_horizontal++;
+        }
+        
+        // Finaliza o laço externo.
+        movimento_em_L_executado++;
+    }
+
+
+    printf("\n--- Simulacao Concluida ---\n");
+
+    return 0; // Indica que o programa terminou com sucesso.
+}
